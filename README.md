@@ -53,7 +53,9 @@ OLED 디스플레이 기반 UI와 로터리 엔코더 입력을 활용해 직관
 
 **User** ↔ **Application(Logic/UI)** ↔ **Device Driver(Kernel)** ↔ **Hardware(OLED/Rotary/RTC/Buzzer)**
 
-## Flow CHart
+---
+
+## Flow Chart
 ![system_overview](docs/flowchart.png)
 
 ---
@@ -97,6 +99,20 @@ OLED 디스플레이 기반 UI와 로터리 엔코더 입력을 활용해 직관
 
 - **로터리 입력 튐 현상**
 
+    <table>
+  <tr>
+    <th align="center">Interrupt 방식시 값이 튀는 현상</th>
+    <th align="center">화전 방향과 위상이 다른 현상</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs/rotary_encoder_interupt.gif" width="600">
+    </td>
+    <td align="center">
+      <img src="docs/rotary_error_osilo.jpg" width="600">
+    </td>
+  </tr>
+</table>
   - 인터럽트 방식 → 노이즈에 취약
   - **hrtimer 기반 1ms 폴링 방식으로 전환**
   - 입력 안정성 및 예측 가능한 CPU 부하 확보
