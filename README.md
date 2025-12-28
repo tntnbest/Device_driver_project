@@ -39,7 +39,7 @@ OLED 디스플레이 기반 UI와 로터리 엔코더 입력을 활용해 직관
   </tr>
   <tr>
     <td align="center">
-      <img src="docs/hardware.jpg" width="600">
+      <img src="docs/hardware.png" width="600">
     </td>
     <td align="center">
       <img src="docs/kicad.png" width="600">
@@ -51,7 +51,7 @@ OLED 디스플레이 기반 UI와 로터리 엔코더 입력을 활용해 직관
 
 ## 시스템 구조
 
-User ↔ Application(Logic/UI) ↔ Device Driver(Kernel) ↔ Hardware(OLED/Rotary/RTC/Buzzer)
+**User** ↔ **Application(Logic/UI)** ↔ **Device Driver(Kernel)** ↔ **Hardware(OLED/Rotary/RTC/Buzzer)**
 
 ## Flow CHart
 ![system_overview](docs/flowchart.png)
@@ -89,7 +89,7 @@ User ↔ Application(Logic/UI) ↔ Device Driver(Kernel) ↔ Hardware(OLED/Rotar
 
 ### ▶ PWM 부저 파형 분석
 - 주기 변화에 따른 출력 파형 확인  
-![buzzer_scope](docs/oscilloscope/PWM_osilo.png)
+![buzzer_scope](docs/PWM_osilo.png)
 
 ---
 
