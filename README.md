@@ -1,39 +1,49 @@
-# 🔐 Safe Unlock System  
-### Linux Device Driver 기반 금고 해제 & RTC 시계 시스템
+# 🔐 금고 비밀번호를 찾아라  
+### Linux Device Driver 기반 금고 해제 & 실시간 시계 시스템
 
-> Raspberry Pi 4 · Linux Kernel Module  
 > Intel Edge SW Academy Project
+> Raspberry Pi 4 기반 리눅스 커널 디바이스 드라이버 설계 및 응용
 
 ---
 
-## 📌 프로젝트 요약
+## 👤 팀 구성
 
-본 프로젝트는 **리눅스 디바이스 드라이버를 직접 설계**하여  
-로터리 엔코더, OLED, RTC, PWM 부저를 제어하는 임베디드 시스템이다.  
-입력 안정성과 실시간성을 핵심 목표로 하여,  
-드라이버–애플리케이션 역할을 명확히 분리한 구조로 구현했다.
+- **김기환** : 애플리케이션 로직, UI 구성 및 테스트  
+- **이동현** : 디바이스 드라이버 설계, 입력 안정성 개선, 시스템 구조 설계  
 
 ---
 
-## 🎯 핵심 목표 (Driver 관점)
+## 프로젝트 요약
 
-- GPIO / I2C / PWM 기반 커널 디바이스 드라이버 구현  
-- 로터리 엔코더 입력 **노이즈 및 값 튐 문제 해결**  
-- 인터럽트 vs 폴링 방식 비교를 통한 안정성 중심 설계  
-- `/dev` 인터페이스 기반 Driver–Application 분리 구조 확립  
+본 프로젝트는 **리눅스 디바이스 드라이버를 직접 구현**하여 금고 해제 게임과 실시간 시계 기능을 제공하는 임베디드 시스템입니다.
 
----
-
-## 🧱 시스템 구조
-
-User ↔ Application (Logic/UI) ↔ Device Driver (Kernel) ↔ Hardware
+OLED 디스플레이 기반 UI와 로터리 엔코더 입력을 활용해 직관적인 메뉴 조작과 실시간 피드백을 구현했으며, RTC/PWM/GPIO/I2C 등 핵심 임베디드 요소를 커널 레벨에서 제어했습니다.
 
 ---
 
-## 🎥 동작 화면 (GIF)
+## 핵심 목표 및 구현 범위
 
-### ▶ 전체 시스템 흐름
-![system_overview](docs/gif/system_overview.gif)
+- 리눅스 디바이스 드라이버 기반 입력/출력 제어
+- 로터리 엔코더 노이즈 없는 고신뢰 입력 처리
+- 비동기 UI 갱신 및 실시간 피드백 시스템
+- 게임 로직과 시스템 설정의 상태(State) 기반 설계
+
+---
+
+## 시스템 구조
+
+User ↔ Application(Logic/UI) ↔ Device Driver(Kernel) ↔ Hardware(OLED/Rotary/RTC/Buzzer)
+
+## Flow CHart
+![system_overview](docs/flowchart.png)
+
+---## 👤 팀 구성
+
+- **김기환** : 애플리케이션 로직, UI 구성 및 테스트  
+- **이동현** : 디바이스 드라이버 설계, 입력 안정성 개선, 시스템 구조 설계  
+
+## 동작 화면
+
 
 ### ▶ 금고 해제 게임 (START_GAME)
 ![game_mode](docs/gif/game_mode.gif)
@@ -72,7 +82,7 @@ User ↔ Application (Logic/UI) ↔ Device Driver (Kernel) ↔ Hardware
 
 ---
 
-## 🛠 주요 문제 해결
+## 주요 문제 해결
 
 - **로터리 입력 튐 현상**
   - 인터럽트 방식 → 노이즈에 취약
@@ -82,20 +92,3 @@ User ↔ Application (Logic/UI) ↔ Device Driver (Kernel) ↔ Hardware
 - **OLED 출력 지연**
   - I2C 전송 구조 개선
   - UI 반응성 향상
-
----
-
-## 🧠 프로젝트를 통해 얻은 역량
-
-- Linux Kernel Module 설계 및 구현 경험  
-- 하드웨어 노이즈 기반 문제 분석 능력  
-- 실시간 시스템에서 안정성 중심 설계 사고  
-- Driver–Application 분리 구조 이해  
-
----
-
-## 👤 팀 구성
-
-- **김기환** : 디바이스 드라이버 설계, 입력 안정성 개선, 시스템 구조 설계  
-- **이동현** : 애플리케이션 로직, UI 구성 및 테스트  
-
