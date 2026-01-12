@@ -15,7 +15,7 @@
 
 ## 프로젝트 요약
 
-본 프로젝트는 **리눅스 디바이스 드라이버를 직접 구현**하여 금고 해제 게임과 실시간 시계 기능을 제공하는 임베디드 시스템입니다.
+본 프로젝트는 리눅스 디바이스 드라이버를 직접 구현하여 금고 해제 게임과 실시간 시계 기능을 제공하는 임베디드 시스템입니다.
 
 OLED 디스플레이 기반 UI와 로터리 엔코더 입력을 활용해 직관적인 메뉴 조작과 실시간 피드백을 구현했으며, RTC/PWM/GPIO/I2C 등 핵심 임베디드 요소를 커널 레벨에서 제어했습니다.
 
@@ -60,13 +60,9 @@ OLED 디스플레이 기반 UI와 로터리 엔코더 입력을 활용해 직관
 
 ---
 
-## 동작 화면
+## ▶ 동작 화면
 
-### ▶ 금고 해제 게임 (START_GAME)
-![game_mode](docs/gif/game_mode.gif)
-
-### ▶ 시간 설정 모드 (TIME_SETTING)
-![time_setting](docs/gif/time_setting.gif)
+https://github.com/user-attachments/assets/337cedab-5136-4c55-9c4f-af0a9811fe7f
 
 ---
 
@@ -83,13 +79,13 @@ OLED 디스플레이 기반 UI와 로터리 엔코더 입력을 활용해 직관
 
 ## 🧪 오실로스코프 분석 (입력 안정성 검증)
 
-### ▶ 로터리 엔코더 파형 분석  
+### 로터리 엔코더 파형 분석  
 - 회전 방향(CW / CCW) 및 버튼 입력 파형 확인  
 ![rotary_scope](docs/rotary_encoder_osilo.png)
 
 ---
 
-### ▶ PWM 부저 파형 분석
+### PWM 부저 파형 분석
 - 주기 변화에 따른 출력 파형 확인  
 ![buzzer_scope](docs/PWM_osilo.png)
 
